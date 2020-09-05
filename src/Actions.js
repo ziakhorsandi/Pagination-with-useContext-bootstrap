@@ -6,7 +6,7 @@ export const FetchPosts = (pageNum, limit, dispatch) => {
   dispatch({ type: "ISLOADING" });
   axios
     .get(
-      `http://jsonplaceholder.typicode.com/posts?_page=${pageNum}&_limit=${limit}`
+      `https://jsonplaceholder.typicode.com/posts?_page=${pageNum}&_limit=${limit}`
     )
     .then((res) => {
       dispatch({ type: "FETCH_POST", payLoad: res.data });

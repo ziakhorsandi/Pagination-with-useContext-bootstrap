@@ -20,12 +20,12 @@ const PaginationBar = ({ allPosts, limit }) => {
 
   return (
     <>
-      <nav aria-label="Page navigation example">
+      <nav aria-label="Page navigation example" style={{ cursor: "pointer" }}>
         <ul className="pagination justify-content-center">
           <li className="page-item">
-            <a
+            <span
               className="page-link"
-              href="!#"
+              // href="!#"
               aria-label="Previous"
               onClick={() => {
                 if (pageNum !== 1) {
@@ -34,7 +34,7 @@ const PaginationBar = ({ allPosts, limit }) => {
               }}
             >
               <span aria-hidden="true">&laquo;</span>
-            </a>
+            </span>
           </li>
           {nums.map((elem) => {
             let active = "";
@@ -43,22 +43,22 @@ const PaginationBar = ({ allPosts, limit }) => {
             }
             return (
               <li key={elem} className={`page-item ${active}`}>
-                <a
+                <span
                   className="page-link"
-                  href="!#"
+                  // href="!#"
                   onClick={() => {
                     setPageNum(elem);
                   }}
                 >
                   {elem}
-                </a>
+                </span>
               </li>
             );
           })}
           <li className="page-item">
-            <a
+            <span
               className="page-link"
-              href="!#"
+              // href="!#"
               aria-label="Next"
               onClick={() => {
                 if (pageNum !== Math.ceil(allPosts / limit)) {
@@ -67,7 +67,7 @@ const PaginationBar = ({ allPosts, limit }) => {
               }}
             >
               <span aria-hidden="true">&raquo;</span>
-            </a>
+            </span>
           </li>
         </ul>
       </nav>
